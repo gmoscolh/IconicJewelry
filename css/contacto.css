@@ -1,0 +1,559 @@
+body {
+  background: #222;
+  color: white;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 80px;
+}
+
+.logo img {
+  height: 65px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  background: #333;
+  padding: 8px 35px;
+  border-radius: 10px;
+}
+
+.menu a {
+  position: relative;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 4px;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1); 
+  transition: filter 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.whatsapp-btn:hover img {
+  filter: brightness(0); 
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.toggle-track {
+  width: 50px;
+  height: 26px;
+  background: #444;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  transition: background 0.3s ease;
+}
+
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+body.light-mode .toggle-track {
+  background: #ddd;
+}
+
+body.light-mode .toggle-thumb {
+  transform: translateX(24px);
+}
+
+body.light-mode {
+  background: #f6f6f6;
+  color: #111;
+}
+
+body.light-mode .menu {
+  background: #e9e9e9;
+}
+
+body.light-mode .menu a {
+  color: #333;
+}
+
+body.light-mode .menu a::after {
+  background: #000;
+}
+
+body.light-mode .menu a:hover {
+  color: #000;
+}
+
+body.light-mode .whatsapp-btn {
+  border: 1px solid #000;
+  color: #000;
+}
+
+body.light-mode .whatsapp-btn img {
+  filter: brightness(0);
+}
+
+body.light-mode .whatsapp-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+body.light-mode .whatsapp-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+
+
+body.light-mode .btn {
+  background: #000;
+  color: #fff;
+}
+
+body.light-mode .btn:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+body.light-mode .reviews,
+body.light-mode .cta-final {
+  background: #ededed;
+  color: #111;
+}
+
+body.light-mode .categories {
+  background: #f6f6f6;
+}
+
+body.light-mode .tag {
+  background: rgba(255,255,255,0.85);
+  color: #000;
+}
+
+body.light-mode .footer {
+  background: #eaeaea;
+  color: #111;
+}
+
+body.light-mode .footer a {
+  color: #111;
+}
+
+body.light-mode .footer a:hover {
+  opacity: 0.7;
+}
+
+body.light-mode .newsletter-form input {
+  border: 1px solid #111;
+  color: #111;
+}
+
+body.light-mode .newsletter-form input::placeholder {
+  color: #666;
+}
+
+body.light-mode .newsletter-form button {
+  border: 1px solid #111;
+  color: #111;
+}
+
+body.light-mode .newsletter-form button:hover {
+  background: #111;
+  color: #fff;
+}
+
+body.light-mode .social a {
+  border-color: #111;
+  color: #111;
+}
+
+body.light-mode .social a:hover {
+  background: #111;
+  color: #fff;
+}
+
+body.light-mode .copyright {
+  border-top: 1px solid #ccc;
+  color: #555;
+}
+
+body.light-mode .logo img,
+body.light-mode .footer-logo img {
+  filter: brightness(0);
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+  padding: 60px 40px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+label.full {
+  grid-column: 1 / -1;
+}
+
+form button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 10px 30px;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 80px 60px 30px;
+  font-family: Georgia, serif;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-logo img {
+  max-width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.newsletter {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+
+.newsletter h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.newsletter p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  width: 320px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.newsletter-form input::placeholder {
+  color: #aaa;
+}
+
+.newsletter-form button {
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+.footer-links nav,
+.footer-links address {
+  justify-self: center;
+}
+
+.brand h3 {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.brand small {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.footer-links h4 {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.contact p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-style: normal;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social a {
+  border: 1px solid #fff;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+}
+
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 20px 40px;
+  }
+
+  .menu {
+    padding: 8px 25px;
+    gap: 20px;
+  }
+
+  main {
+    padding: 60px 30px;
+  }
+
+  form fieldset {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  form button {
+    justify-self: center;
+  }
+
+  .newsletter-form {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: auto;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .menu {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+
+  main {
+    padding: 40px 20px;
+  }
+
+  .contact-header {
+    font-size: 24px;
+  }
+
+  form fieldset {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  label.full {
+    grid-column: 1 / -1;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  form button {
+    width: 100%;
+    max-width: 300px;
+    justify-self: center;
+    padding: 12px 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    margin-left: 0;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
